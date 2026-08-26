@@ -183,6 +183,7 @@ D:\_Document\ReportMLCI\ReportMLCI\obj\Debug\net8.0-windows\ReportMLCI.Generated
 D:\_Document\ReportMLCI\ReportMLCI\obj\Debug\net8.0-windows\ReportMLCI.AssemblyInfoInputs.cache
 D:\_Document\ReportMLCI\ReportMLCI\obj\Debug\net8.0-windows\ReportMLCI.AssemblyInfo.cs
 D:\_Document\ReportMLCI\ReportMLCI\obj\Debug\net8.0-windows\ReportMLCI.csproj.CoreCompileInputs.cache
+D:\_Document\ReportMLCI\ReportMLCI\obj\Debug\net8.0-windows\ReportMLCI.sourcelink.json
 D:\_Document\ReportMLCI\ReportMLCI\obj\Debug\net8.0-windows\ReportMLCI.csproj.Up2Date
 D:\_Document\ReportMLCI\ReportMLCI\obj\Debug\net8.0-windows\ReportMLCI.dll
 D:\_Document\ReportMLCI\ReportMLCI\obj\Debug\net8.0-windows\refint\ReportMLCI.dll

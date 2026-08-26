@@ -6,6 +6,7 @@ D:\_Document\ReportMLCI\ReportMLCI.Shared\obj\Debug\net8.0\ReportMLCI.Shared.Gen
 D:\_Document\ReportMLCI\ReportMLCI.Shared\obj\Debug\net8.0\ReportMLCI.Shared.AssemblyInfoInputs.cache
 D:\_Document\ReportMLCI\ReportMLCI.Shared\obj\Debug\net8.0\ReportMLCI.Shared.AssemblyInfo.cs
 D:\_Document\ReportMLCI\ReportMLCI.Shared\obj\Debug\net8.0\ReportMLCI.Shared.csproj.CoreCompileInputs.cache
+D:\_Document\ReportMLCI\ReportMLCI.Shared\obj\Debug\net8.0\ReportMLCI.Shared.sourcelink.json
 D:\_Document\ReportMLCI\ReportMLCI.Shared\obj\Debug\net8.0\ReportMLCI.Shared.dll
 D:\_Document\ReportMLCI\ReportMLCI.Shared\obj\Debug\net8.0\refint\ReportMLCI.Shared.dll
 D:\_Document\ReportMLCI\ReportMLCI.Shared\obj\Debug\net8.0\ReportMLCI.Shared.pdb

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ReportMLCI.Shared")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+43085038ff02636d9f03e46d0e4f8bd55852b6cc")]
 [assembly: System.Reflection.AssemblyProductAttribute("ReportMLCI.Shared")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ReportMLCI.Shared")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

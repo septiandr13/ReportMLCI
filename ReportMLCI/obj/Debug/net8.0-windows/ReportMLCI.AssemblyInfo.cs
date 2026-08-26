@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ReportMLCI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+71b161b0e1fb9285371ef9d561e9c3d940c8da49")]
 [assembly: System.Reflection.AssemblyProductAttribute("ReportMLCI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ReportMLCI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
