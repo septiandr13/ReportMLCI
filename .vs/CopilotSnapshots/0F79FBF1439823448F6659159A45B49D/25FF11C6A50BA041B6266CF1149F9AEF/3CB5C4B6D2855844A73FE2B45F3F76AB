@@ -1,0 +1,255 @@
+﻿using System;
+using System.IO;
+using ReportMLCI.Tools;
+using ReportMLCI.Utilities;
+
+namespace ReportMLCI.Examples
+{
+    /// <summary>
+    /// Contoh penggunaan RdlcProcessorTool untuk memproses RDLC files dengan tag <j>
+    /// </summary>
+    public class RdlcProcessorExample
+    {
+        // ==================== EXAMPLE 1: Process Report_Lampiran2 ====================
+        public static void Example1_ProcessSingleFile()
+        {
+            Console.WriteLine("\n╔════════════════════════════════════════════╗");
+            Console.WriteLine("║   Example 1: Process Single RDLC File      ║");
+            Console.WriteLine("╚════════════════════════════════════════════╝\n");
+
+            var tool = new RdlcProcessorTool();
+            tool.ProcessSingleFile("Report_Lampiran2.rdlc");
+        }
+
+        // ==================== EXAMPLE 2: Detect Only (Preview) ====================
+        public static void Example2_DetectOnly()
+        {
+            Console.WriteLine("\n╔════════════════════════════════════════════╗");
+            Console.WriteLine("║   Example 2: Detect Only (Preview)         ║");
+            Console.WriteLine("╚════════════════════════════════════════════╝\n");
+
+            var tool = new RdlcProcessorTool();
+            tool.DetectOnly("Report_Lampiran2.rdlc");
+        }
+
+        // ==================== EXAMPLE 3: Process All RDLC Files ====================
+        public static void Example3_ProcessAllFiles()
+        {
+            Console.WriteLine("\n╔════════════════════════════════════════════╗");
+            Console.WriteLine("║   Example 3: Process All RDLC Files        ║");
+            Console.WriteLine("╚════════════════════════════════════════════╝\n");
+
+            var tool = new RdlcProcessorTool();
+            tool.ProcessAllRdlcFiles();
+        }
+
+        // ==================== EXAMPLE 4: Detect All Files ====================
+        public static void Example4_DetectAllFiles()
+        {
+            Console.WriteLine("\n╔════════════════════════════════════════════╗");
+            Console.WriteLine("║   Example 4: Detect All RDLC Files         ║");
+            Console.WriteLine("╚════════════════════════════════════════════╝\n");
+
+            var tool = new RdlcProcessorTool();
+            tool.DetectAllOnly();
+        }
+
+        // ==================== EXAMPLE 5: Extract Content ====================
+        public static void Example5_ExtractContent()
+        {
+            Console.WriteLine("\n╔════════════════════════════════════════════╗");
+            Console.WriteLine("║   Example 5: Extract <j> Tag Contents      ║");
+            Console.WriteLine("╚════════════════════════════════════════════╝\n");
+
+            var tool = new RdlcProcessorTool();
+            tool.ExtractJustifyContent("Report_Lampiran2.rdlc");
+        }
+
+        // ==================== EXAMPLE 6: Direct Processing ====================
+        public static void Example6_DirectProcessing()
+        {
+            Console.WriteLine("\n╔════════════════════════════════════════════╗");
+            Console.WriteLine("║   Example 6: Direct Content Processing     ║");
+            Console.WriteLine("╚════════════════════════════════════════════╝\n");
+
+            // Sample RDLC content dengan tag <j>
+            string sampleContent = @"<Value>=""&lt;j&gt;Ini adalah contoh text yang akan dijustify&lt;/j&gt;""</Value>";
+
+            Console.WriteLine("Original:");
+            Console.WriteLine(sampleContent);
+
+            string processed = RdlcJustifyTagProcessor.ProcessRdlcContent(sampleContent);
+
+            Console.WriteLine("\nProcessed:");
+            Console.WriteLine(processed);
+
+            Console.WriteLine("\nDecoded:");
+            Console.WriteLine(System.Net.WebUtility.HtmlDecode(processed));
+        }
+
+        // ==================== EXAMPLE 7: Count Tags ====================
+        public static void Example7_CountTags()
+        {
+            Console.WriteLine("\n╔════════════════════════════════════════════╗");
+            Console.WriteLine("║   Example 7: Count Justify Tags            ║");
+            Console.WriteLine("╚════════════════════════════════════════════╝\n");
+
+            var tool = new RdlcProcessorTool();
+            string[] rdlcFiles = tool.GetAllRdlcFiles();
+
+            Console.WriteLine($"Total RDLC files: {rdlcFiles.Length}\n");
+
+            foreach (var file in rdlcFiles)
+            {
+                string fileName = Path.GetFileName(file);
+                string content = File.ReadAllText(file);
+                int count = RdlcJustifyTagProcessor.CountJustifyTags(content);
+
+                if (count > 0)
+                {
+                    Console.WriteLine($"  ✓ {fileName}: {count} <j> tags");
+                }
+            }
+        }
+
+        // ==================== EXAMPLE 8: Batch Processing Report ====================
+        public static void Example8_BatchProcessingReport()
+        {
+            Console.WriteLine("\n╔════════════════════════════════════════════╗");
+            Console.WriteLine("║   Example 8: Batch Processing Report       ║");
+            Console.WriteLine("╚════════════════════════════════════════════╝\n");
+
+            var tool = new RdlcProcessorTool();
+            string[] rdlcFiles = tool.GetAllRdlcFiles();
+
+            Console.WriteLine($"Scanning {rdlcFiles.Length} RDLC files...\n");
+
+            int totalTags = 0;
+            int filesWithTags = 0;
+
+            foreach (var file in rdlcFiles)
+            {
+                string fileName = Path.GetFileName(file);
+                string content = File.ReadAllText(file);
+                int count = RdlcJustifyTagProcessor.CountJustifyTags(content);
+
+                if (count > 0)
+                {
+                    Console.WriteLine($"  ✓ {fileName}: {count} tag(s) - Ready to process");
+                    totalTags += count;
+                    filesWithTags++;
+                }
+                else
+                {
+                    Console.WriteLine($"  ○ {fileName}: No tags");
+                }
+            }
+
+            Console.WriteLine($"\n--- Summary ---");
+            Console.WriteLine($"  Files with tags: {filesWithTags}/{rdlcFiles.Length}");
+            Console.WriteLine($"  Total tags: {totalTags}");
+            Console.WriteLine($"  Ready to convert: {(totalTags > 0 ? "YES" : "NO")}");
+        }
+
+        // ==================== Run All Examples ====================
+        public static void RunAllExamples()
+        {
+            Console.WriteLine("╔════════════════════════════════════════════╗");
+            Console.WriteLine("║  RDLC Processor - All Examples              ║");
+            Console.WriteLine("╚════════════════════════════════════════════╝");
+
+            Example1_ProcessSingleFile();
+            Example2_DetectOnly();
+            Example3_ProcessAllFiles();
+            Example4_DetectAllFiles();
+            Example5_ExtractContent();
+            Example6_DirectProcessing();
+            Example7_CountTags();
+            Example8_BatchProcessingReport();
+
+            Console.WriteLine("\n╔════════════════════════════════════════════╗");
+            Console.WriteLine("║  All Examples Complete                     ║");
+            Console.WriteLine("╚════════════════════════════════════════════╝");
+        }
+
+        // ==================== Main Entry Point ====================
+        public static void Main(string[] args)
+        {
+            try
+            {
+                if (args.Length == 0)
+                {
+                    // Default: Process all RDLC files
+                    Console.WriteLine("No arguments provided. Processing all RDLC files...");
+                    Example3_ProcessAllFiles();
+                }
+                else
+                {
+                    string command = args[0].ToLower();
+
+                    switch (command)
+                    {
+                        case "process":
+                            if (args.Length > 1)
+                            {
+                                var tool = new RdlcProcessorTool();
+                                tool.ProcessSingleFile(args[1]);
+                            }
+                            else
+                            {
+                                Example3_ProcessAllFiles();
+                            }
+                            break;
+
+                        case "detect":
+                            if (args.Length > 1)
+                            {
+                                var tool = new RdlcProcessorTool();
+                                tool.DetectOnly(args[1]);
+                            }
+                            else
+                            {
+                                Example4_DetectAllFiles();
+                            }
+                            break;
+
+                        case "extract":
+                            if (args.Length > 1)
+                            {
+                                var tool = new RdlcProcessorTool();
+                                tool.ExtractJustifyContent(args[1]);
+                            }
+                            break;
+
+                        case "all":
+                            Example3_ProcessAllFiles();
+                            break;
+
+                        case "examples":
+                            RunAllExamples();
+                            break;
+
+                        default:
+                            Console.WriteLine("Unknown command: " + command);
+                            PrintUsage();
+                            break;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"❌ Error: {ex.Message}");
+            }
+        }
+
+        private static void PrintUsage()
+        {
+            Console.WriteLine("\nUsage:");
+            Console.WriteLine("  process [filename.rdlc] - Process single RDLC file");
+            Console.WriteLine("  detect [filename.rdlc]  - Detect tags in single file");
+            Console.WriteLine("  extract [filename.rdlc] - Extract tag contents");
+            Console.WriteLine("  all                     - Process all RDLC files");
+            Console.WriteLine("  examples                - Run all examples");
+        }
+    }
+}

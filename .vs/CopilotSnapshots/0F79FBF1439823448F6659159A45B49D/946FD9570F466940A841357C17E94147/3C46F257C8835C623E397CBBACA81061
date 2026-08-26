@@ -1,0 +1,299 @@
+﻿using System;
+using System.Collections.Generic;
+using ReportMLCI.Services;
+using ReportMLCI.Controllers;
+using ReportMLCI.Utilities;
+using ReportMLCI.Extensions;
+
+namespace ReportMLCI.Examples
+{
+    /// <summary>
+    /// Contoh penggunaan HtmlJustifyService untuk menangani tag &lt;j&gt;
+    /// </summary>
+    public class HtmlJustifyServiceExample
+    {
+        // ==================== EXAMPLE 1: Basic Usage ====================
+        public static void Example1_BasicUsage()
+        {
+            string htmlContent = "<j>Ini adalah text yang akan dijustify dengan tag &lt;j&gt;</j>";
+
+            // Menggunakan service secara langsung
+            string result = HtmlJustifyService.ConvertJustifyTag(htmlContent);
+
+            // Output: <div style='text-align:justify;'>Ini adalah text yang akan dijustify dengan tag &lt;j&gt;</div>
+            Console.WriteLine("Example 1 - Basic Usage:");
+            Console.WriteLine($"Input:  {htmlContent}");
+            Console.WriteLine($"Output: {result}");
+            Console.WriteLine();
+        }
+
+        // ==================== EXAMPLE 2: Using Extension Method ====================
+        public static void Example2_ExtensionMethod()
+        {
+            string htmlContent = "<j>Text dengan extension method</j>";
+
+            // Menggunakan extension method
+            string result = htmlContent.ConvertJustifyTag();
+
+            Console.WriteLine("Example 2 - Extension Method:");
+            Console.WriteLine($"Input:  {htmlContent}");
+            Console.WriteLine($"Output: {result}");
+            Console.WriteLine();
+        }
+
+        // ==================== EXAMPLE 3: Multiple Justify Tags ====================
+        public static void Example3_MultipleJustifyTags()
+        {
+            string htmlContent = "<j>Paragraph 1 dengan justify</j> " +
+                                "<j>Paragraph 2 dengan justify</j>";
+
+            string result = HtmlJustifyService.ConvertJustifyTag(htmlContent);
+
+            Console.WriteLine("Example 3 - Multiple Justify Tags:");
+            Console.WriteLine($"Input:  {htmlContent}");
+            Console.WriteLine($"Output: {result}");
+            Console.WriteLine();
+        }
+
+        // ==================== EXAMPLE 4: Nested Tags ====================
+        public static void Example4_NestedTags()
+        {
+            string htmlContent = "<j><b>Bold text</b> dan <u>underlined text</u> dengan justify</j>";
+
+            string result = HtmlJustifyService.ConvertJustifyTag(htmlContent);
+
+            Console.WriteLine("Example 4 - Nested Tags:");
+            Console.WriteLine($"Input:  {htmlContent}");
+            Console.WriteLine($"Output: {result}");
+            Console.WriteLine();
+        }
+
+        // ==================== EXAMPLE 5: With Additional Styles ====================
+        public static void Example5_WithAdditionalStyles()
+        {
+            string htmlContent = "<j>Text dengan justify dan additional styles</j>";
+            string additionalStyles = "line-height:1.5; margin:10px; padding:5px;";
+
+            string result = HtmlJustifyService.ConvertJustifyTagWithStyles(htmlContent, additionalStyles);
+
+            Console.WriteLine("Example 5 - With Additional Styles:");
+            Console.WriteLine($"Input:  {htmlContent}");
+            Console.WriteLine($"Styles: {additionalStyles}");
+            Console.WriteLine($"Output: {result}");
+            Console.WriteLine();
+        }
+
+        // ==================== EXAMPLE 6: Using Extension with Styles ====================
+        public static void Example6_ExtensionWithStyles()
+        {
+            string htmlContent = "<j>Text dengan extension dan style tambahan</j>";
+
+            string result = htmlContent.ConvertJustifyTag("color:blue; font-size:14px;");
+
+            Console.WriteLine("Example 6 - Extension with Styles:");
+            Console.WriteLine($"Input:  {htmlContent}");
+            Console.WriteLine($"Output: {result}");
+            Console.WriteLine();
+        }
+
+        // ==================== EXAMPLE 7: Advanced Processing ====================
+        public static void Example7_AdvancedProcessing()
+        {
+            string htmlContent = "<j id='content1'>Advanced text dengan id</j>";
+
+            string result = HtmlJustifyService.ConvertJustifyTagAdvanced(htmlContent);
+
+            Console.WriteLine("Example 7 - Advanced Processing (preserve attributes):");
+            Console.WriteLine($"Input:  {htmlContent}");
+            Console.WriteLine($"Output: {result}");
+            Console.WriteLine();
+        }
+
+        // ==================== EXAMPLE 8: Converting to Paragraph ====================
+        public static void Example8_ConvertToParagraph()
+        {
+            string htmlContent = "<j>Text yang akan dikonversi menjadi paragraph</j>";
+
+            string result = HtmlJustifyService.ConvertJustifyTagToParagraph(htmlContent);
+
+            Console.WriteLine("Example 8 - Convert to Paragraph:");
+            Console.WriteLine($"Input:  {htmlContent}");
+            Console.WriteLine($"Output: {result}");
+            Console.WriteLine();
+        }
+
+        // ==================== EXAMPLE 9: Check if Contains Tag ====================
+        public static void Example9_CheckContainsTag()
+        {
+            string html1 = "<j>Text dengan tag</j>";
+            string html2 = "<div>Text tanpa tag</div>";
+
+            bool contains1 = HtmlJustifyService.ContainsJustifyTag(html1);
+            bool contains2 = HtmlJustifyService.ContainsJustifyTag(html2);
+
+            Console.WriteLine("Example 9 - Check Contains Tag:");
+            Console.WriteLine($"'{html1}' contains <j>: {contains1}");
+            Console.WriteLine($"'{html2}' contains <j>: {contains2}");
+            Console.WriteLine();
+        }
+
+        // ==================== EXAMPLE 10: Remove Tag ====================
+        public static void Example10_RemoveTag()
+        {
+            string htmlContent = "<j>Text dengan <b>bold</b></j>";
+
+            string result = HtmlJustifyService.RemoveJustifyTag(htmlContent);
+
+            Console.WriteLine("Example 10 - Remove Tag (keep content):");
+            Console.WriteLine($"Input:  {htmlContent}");
+            Console.WriteLine($"Output: {result}");
+            Console.WriteLine();
+        }
+
+        // ==================== EXAMPLE 11: Using Controller ====================
+        public static void Example11_UsingController()
+        {
+            var controller = new ReportProcessorController();
+
+            string htmlContent = "<j>Text dari report processor</j>";
+            string result = controller.ProcessHtmlContent(htmlContent);
+
+            Console.WriteLine("Example 11 - Using ReportProcessorController:");
+            Console.WriteLine($"Input:  {htmlContent}");
+            Console.WriteLine($"Output: {result}");
+            Console.WriteLine();
+        }
+
+        // ==================== EXAMPLE 12: Processing Dataset ====================
+        public static void Example12_ProcessingDataset()
+        {
+            var controller = new ReportProcessorController();
+
+            var reportData = new TestReportData
+            {
+                Nama = "John Doe",
+                Deskripsi = "<j>Ini adalah deskripsi dengan justify tag</j>"
+            };
+
+            var result = controller.ProcessReportData(reportData);
+
+            Console.WriteLine("Example 12 - Processing Dataset:");
+            Console.WriteLine($"Nama: {result.Nama}");
+            Console.WriteLine($"Deskripsi: {result.Deskripsi}");
+            Console.WriteLine();
+        }
+
+        // ==================== EXAMPLE 13: Using Utility Wrap Function ====================
+        public static void Example13_WrapInJustifyDiv()
+        {
+            string content = "Content yang akan di-wrap dengan justify";
+
+            string result1 = HtmlProcessingUtility.WrapInJustifyDiv(content);
+            string result2 = HtmlProcessingUtility.WrapInJustifyDiv(content, "margin:10px;");
+            string result3 = HtmlProcessingUtility.WrapInJustifyDiv(content, "margin:10px;", "my-class");
+
+            Console.WriteLine("Example 13 - Wrap in Justify Div:");
+            Console.WriteLine($"Result 1: {result1}");
+            Console.WriteLine($"Result 2: {result2}");
+            Console.WriteLine($"Result 3: {result3}");
+            Console.WriteLine();
+        }
+
+        // ==================== EXAMPLE 14: Extract Content ====================
+        public static void Example14_ExtractContent()
+        {
+            string htmlContent = "<j>Content 1</j> some text <j>Content 2</j>";
+
+            var contents = HtmlProcessingUtility.ExtractJustifyTagContent(htmlContent);
+
+            Console.WriteLine("Example 14 - Extract Justify Tag Content:");
+            Console.WriteLine($"Input: {htmlContent}");
+            Console.WriteLine("Extracted contents:");
+            foreach (var content in contents)
+            {
+                Console.WriteLine($"  - {content}");
+            }
+            Console.WriteLine();
+        }
+
+        // ==================== EXAMPLE 15: Count Tags ====================
+        public static void Example15_CountTags()
+        {
+            string html1 = "<j>Content 1</j> <j>Content 2</j> <j>Content 3</j>";
+            string html2 = "<div>No justify tags</div>";
+
+            int count1 = HtmlProcessingUtility.CountJustifyTags(html1);
+            int count2 = HtmlProcessingUtility.CountJustifyTags(html2);
+
+            Console.WriteLine("Example 15 - Count Justify Tags:");
+            Console.WriteLine($"'{html1}' has {count1} tags");
+            Console.WriteLine($"'{html2}' has {count2} tags");
+            Console.WriteLine();
+        }
+
+        // ==================== EXAMPLE 16: Validate Tags ====================
+        public static void Example16_ValidateTags()
+        {
+            string html1 = "<j>Valid content</j>";
+            string html2 = "<j>Invalid content"; // Missing closing tag
+
+            bool valid1 = HtmlProcessingUtility.ValidateJustifyTags(html1);
+            bool valid2 = HtmlProcessingUtility.ValidateJustifyTags(html2);
+
+            Console.WriteLine("Example 16 - Validate Tags:");
+            Console.WriteLine($"'{html1}' is valid: {valid1}");
+            Console.WriteLine($"'{html2}' is valid: {valid2}");
+            Console.WriteLine();
+        }
+
+        // ==================== EXAMPLE 17: SSRS Report Processing ====================
+        public static void Example17_SSRSReportProcessing()
+        {
+            string htmlContent = "=\"<j>\" & Fields!Nama.Value & \" adalah deskripsi dengan justify</j>\"";
+
+            string result = HtmlProcessingUtility.ProcessSSRSExpression(htmlContent);
+
+            Console.WriteLine("Example 17 - SSRS Expression Processing:");
+            Console.WriteLine($"Input:  {htmlContent}");
+            Console.WriteLine($"Output: {result}");
+            Console.WriteLine();
+        }
+
+        // ==================== Helper Class ====================
+        public class TestReportData
+        {
+            public string Nama { get; set; }
+            public string Deskripsi { get; set; }
+        }
+
+        // ==================== Main Method ====================
+        public static void Main()
+        {
+            Console.WriteLine("========================================");
+            Console.WriteLine("   HTML Justify Tag Examples");
+            Console.WriteLine("========================================\n");
+
+            Example1_BasicUsage();
+            Example2_ExtensionMethod();
+            Example3_MultipleJustifyTags();
+            Example4_NestedTags();
+            Example5_WithAdditionalStyles();
+            Example6_ExtensionWithStyles();
+            Example7_AdvancedProcessing();
+            Example8_ConvertToParagraph();
+            Example9_CheckContainsTag();
+            Example10_RemoveTag();
+            Example11_UsingController();
+            Example12_ProcessingDataset();
+            Example13_WrapInJustifyDiv();
+            Example14_ExtractContent();
+            Example15_CountTags();
+            Example16_ValidateTags();
+            Example17_SSRSReportProcessing();
+
+            Console.WriteLine("========================================");
+            Console.WriteLine("   Examples Complete");
+            Console.WriteLine("========================================");
+        }
+    }
+}

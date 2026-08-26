@@ -1,0 +1,16 @@
+﻿namespace ReportMLCI.Models
+namespace ReportMLCI.Models
+{
+    public class MasterClause
+    {
+        public Guid Id { get; set; }
+        public string? ClauseCode { get; set; }
+        public string? ClauseTitle { get; set; }
+        public string? ClauseContent { get; set; }
+        public bool IsActive { get; set; }
+        public DateTime CreatedAt { get; set; }
+        public DateTime UpdatedAt { get; set; }
+
+        public List<MasterClausesDetails> MasterClausesDetails { get; set; } = new List<MasterClausesDetails>();
+    }
+}

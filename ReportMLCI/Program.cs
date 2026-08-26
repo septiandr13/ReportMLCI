@@ -1,0 +1,39 @@
+using ReportMLCI.Data;
+
+namespace ReportMLCI
+{
+    internal static class Program
+    {
+        /// <summary>
+        ///  The main entry point for the application.
+        /// </summary>
+        [STAThread]
+        static void Main()
+        {
+            // To customize application configuration such as set high DPI settings or default font,
+            // see https://aka.ms/applicationconfiguration.
+            ApplicationConfiguration.Initialize();
+
+            // Initialize database
+            InitializeDatabase();
+
+            Application.Run(new Form1());
+        }
+
+        private static void InitializeDatabase()
+        {
+            try
+            {
+                using (var context = new ApplicationDbContext())
+                {
+                    // Create database and apply migrations
+                    context.Database.EnsureCreated();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error initializing database: {ex.Message}", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+    }
+}

@@ -1,0 +1,705 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <Body>
+    <ReportItems>
+      <Rectangle Name="Rectangle10">
+        <ReportItems>
+          <Tablix Name="Tablix1">
+            <TablixBody>
+              <TablixColumns>
+                <TablixColumn>
+                  <Width>8.86933cm</Width>
+                </TablixColumn>
+              </TablixColumns>
+              <TablixRows>
+                <TablixRow>
+                  <Height>3.03314cm</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Rectangle Name="Rectangle1">
+                          <ReportItems>
+                            <Textbox Name="ClauseCode">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>=Fields!ClauseCode.Value</Value>
+                                      <Style>
+                                        <FontWeight>Bold</FontWeight>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style>
+                                    <TextAlign>Center</TextAlign>
+                                  </Style>
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>ClauseCode</rd:DefaultName>
+                              <Height>0.6cm</Height>
+                              <Width>8.86933cm</Width>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <PaddingTop>2pt</PaddingTop>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="ClauseTitle">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>=Fields!ClauseTitle.Value</Value>
+                                      <Style>
+                                        <FontWeight>Bold</FontWeight>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style>
+                                    <TextAlign>Center</TextAlign>
+                                  </Style>
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>ClauseTitle</rd:DefaultName>
+                              <Top>0.63314cm</Top>
+                              <Height>0.6cm</Height>
+                              <Width>8.86933cm</Width>
+                              <ZIndex>1</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="ClauseContent">
+                              <CanGrow>true</CanGrow>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>=Fields!ClauseContent.Value</Value>
+                                      <Style />
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style />
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>ClauseContent</rd:DefaultName>
+                              <Top>1.23314cm</Top>
+                              <Height>0.6cm</Height>
+                              <Width>8.86933cm</Width>
+                              <ZIndex>2</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                              </Style>
+                            </Textbox>
+                            <Tablix Name="Tablix2">
+                              <TablixBody>
+                                <TablixColumns>
+                                  <TablixColumn>
+                                    <Width>1.07787cm</Width>
+                                  </TablixColumn>
+                                  <TablixColumn>
+                                    <Width>1.08889cm</Width>
+                                  </TablixColumn>
+                                  <TablixColumn>
+                                    <Width>6.69176cm</Width>
+                                  </TablixColumn>
+                                </TablixColumns>
+                                <TablixRows>
+                                  <TablixRow>
+                                    <Height>0.6cm</Height>
+                                    <TablixCells>
+                                      <TablixCell>
+                                        <CellContents>
+                                          <Textbox Name="ClauseSubCode">
+                                            <CanGrow>true</CanGrow>
+                                            <UserSort>
+                                              <SortExpression>=Fields!ClauseSubCode.Value</SortExpression>
+                                              <SortExpressionScope>ClauseSubCode</SortExpressionScope>
+                                            </UserSort>
+                                            <Paragraphs>
+                                              <Paragraph>
+                                                <TextRuns>
+                                                  <TextRun>
+                                                    <Value>=Fields!ClauseSubCode.Value</Value>
+                                                    <Style />
+                                                  </TextRun>
+                                                </TextRuns>
+                                                <Style />
+                                              </Paragraph>
+                                            </Paragraphs>
+                                            <rd:DefaultName>ClauseSubCode</rd:DefaultName>
+                                            <Style>
+                                              <Border>
+                                                <Color>LightGrey</Color>
+                                                <Style>None</Style>
+                                              </Border>
+                                            </Style>
+                                          </Textbox>
+                                        </CellContents>
+                                      </TablixCell>
+                                      <TablixCell>
+                                        <CellContents>
+                                          <Textbox Name="ClauseSubContent">
+                                            <CanGrow>true</CanGrow>
+                                            <Paragraphs>
+                                              <Paragraph>
+                                                <TextRuns>
+                                                  <TextRun>
+                                                    <Value>=Fields!ClauseSubContent.Value</Value>
+                                                    <Style />
+                                                  </TextRun>
+                                                </TextRuns>
+                                                <Style />
+                                              </Paragraph>
+                                            </Paragraphs>
+                                            <rd:DefaultName>ClauseSubContent</rd:DefaultName>
+                                            <Style>
+                                              <Border>
+                                                <Color>LightGrey</Color>
+                                                <Style>None</Style>
+                                              </Border>
+                                            </Style>
+                                          </Textbox>
+                                          <ColSpan>2</ColSpan>
+                                        </CellContents>
+                                      </TablixCell>
+                                      <TablixCell />
+                                    </TablixCells>
+                                  </TablixRow>
+                                  <TablixRow>
+                                    <Height>0.6cm</Height>
+                                    <TablixCells>
+                                      <TablixCell>
+                                        <CellContents>
+                                          <Textbox Name="SubDetailCode">
+                                            <CanGrow>true</CanGrow>
+                                            <Paragraphs>
+                                              <Paragraph>
+                                                <TextRuns>
+                                                  <TextRun>
+                                                    <Value />
+                                                    <Style />
+                                                  </TextRun>
+                                                </TextRuns>
+                                                <Style />
+                                              </Paragraph>
+                                            </Paragraphs>
+                                            <rd:DefaultName>SubDetailCode</rd:DefaultName>
+                                            <Style>
+                                              <Border>
+                                                <Color>LightGrey</Color>
+                                                <Style>None</Style>
+                                              </Border>
+                                              <PaddingTop>2pt</PaddingTop>
+                                              <PaddingBottom>2pt</PaddingBottom>
+                                            </Style>
+                                          </Textbox>
+                                        </CellContents>
+                                      </TablixCell>
+                                      <TablixCell>
+                                        <CellContents>
+                                          <Textbox Name="SubDetailCode1">
+                                            <CanGrow>true</CanGrow>
+                                            <Paragraphs>
+                                              <Paragraph>
+                                                <TextRuns>
+                                                  <TextRun>
+                                                    <Value>=Fields!SubDetailCode.Value</Value>
+                                                    <Style />
+                                                  </TextRun>
+                                                </TextRuns>
+                                                <Style />
+                                              </Paragraph>
+                                            </Paragraphs>
+                                            <rd:DefaultName>SubDetailCode1</rd:DefaultName>
+                                            <Style>
+                                              <Border>
+                                                <Color>LightGrey</Color>
+                                                <Style>None</Style>
+                                              </Border>
+                                              <PaddingTop>2pt</PaddingTop>
+                                              <PaddingBottom>2pt</PaddingBottom>
+                                            </Style>
+                                          </Textbox>
+                                        </CellContents>
+                                      </TablixCell>
+                                      <TablixCell>
+                                        <CellContents>
+                                          <Textbox Name="SubDetailContent">
+                                            <CanGrow>true</CanGrow>
+                                            <Paragraphs>
+                                              <Paragraph>
+                                                <TextRuns>
+                                                  <TextRun>
+                                                    <Value>=Fields!SubDetailContent.Value</Value>
+                                                    <Style />
+                                                  </TextRun>
+                                                </TextRuns>
+                                                <Style />
+                                              </Paragraph>
+                                            </Paragraphs>
+                                            <rd:DefaultName>SubDetailContent</rd:DefaultName>
+                                            <Style>
+                                              <Border>
+                                                <Color>LightGrey</Color>
+                                                <Style>None</Style>
+                                              </Border>
+                                              <PaddingTop>2pt</PaddingTop>
+                                              <PaddingBottom>2pt</PaddingBottom>
+                                            </Style>
+                                          </Textbox>
+                                        </CellContents>
+                                      </TablixCell>
+                                    </TablixCells>
+                                  </TablixRow>
+                                </TablixRows>
+                              </TablixBody>
+                              <TablixColumnHierarchy>
+                                <TablixMembers>
+                                  <TablixMember />
+                                  <TablixMember />
+                                  <TablixMember />
+                                </TablixMembers>
+                              </TablixColumnHierarchy>
+                              <TablixRowHierarchy>
+                                <TablixMembers>
+                                  <TablixMember>
+                                    <Group Name="ClauseSubCode">
+                                      <GroupExpressions>
+                                        <GroupExpression>=Fields!ClauseSubCode.Value</GroupExpression>
+                                      </GroupExpressions>
+                                    </Group>
+                                    <SortExpressions>
+                                      <SortExpression>
+                                        <Value>=Fields!IdClauseSub.Value</Value>
+                                      </SortExpression>
+                                    </SortExpressions>
+                                    <TablixMembers>
+                                      <TablixMember>
+                                        <KeepWithGroup>After</KeepWithGroup>
+                                      </TablixMember>
+                                      <TablixMember>
+                                        <Group Name="Details" />
+                                        <Visibility>
+                                          <Hidden>=IIF(
+    IsNothing(Fields!SubDetailCode.Value) 
+    OR Fields!SubDetailContent.Value = "",
+    True,
+    False
+)</Hidden>
+                                        </Visibility>
+                                      </TablixMember>
+                                    </TablixMembers>
+                                  </TablixMember>
+                                </TablixMembers>
+                              </TablixRowHierarchy>
+                              <DataSetName>DataSetClause</DataSetName>
+                              <Top>1.83314cm</Top>
+                              <Left>0.01082cm</Left>
+                              <Height>1.2cm</Height>
+                              <Width>8.85852cm</Width>
+                              <ZIndex>3</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <WritingMode>Horizontal</WritingMode>
+                              </Style>
+                            </Tablix>
+                          </ReportItems>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                          </Style>
+                        </Rectangle>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+              </TablixRows>
+            </TablixBody>
+            <TablixColumnHierarchy>
+              <TablixMembers>
+                <TablixMember />
+              </TablixMembers>
+            </TablixColumnHierarchy>
+            <TablixRowHierarchy>
+              <TablixMembers>
+                <TablixMember>
+                  <Group Name="parent">
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!ClauseCode.Value</GroupExpression>
+                    </GroupExpressions>
+                  </Group>
+                  <TablixMembers>
+                    <TablixMember />
+                  </TablixMembers>
+                </TablixMember>
+              </TablixMembers>
+            </TablixRowHierarchy>
+            <DataSetName>DataSetClause</DataSetName>
+            <Height>3.03314cm</Height>
+            <Width>8.86933cm</Width>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <FontFamily />
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+              <WritingMode>Horizontal</WritingMode>
+            </Style>
+          </Tablix>
+        </ReportItems>
+        <Top>4.48647cm</Top>
+        <Left>0.9234cm</Left>
+        <Height>3.03314cm</Height>
+        <Width>8.86933cm</Width>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Rectangle>
+      <Rectangle Name="Rectangle2">
+        <ReportItems>
+          <Tablix Name="Tablix3">
+            <TablixBody>
+              <TablixColumns>
+                <TablixColumn>
+                  <Width>8.85851cm</Width>
+                </TablixColumn>
+              </TablixColumns>
+              <TablixRows>
+                <TablixRow>
+                  <Height>0.6cm</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="ClauseHeaderCode">
+                          <CanGrow>true</CanGrow>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!ClauseHeaderCode.Value</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>ClauseHeaderCode</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>None</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.6cm</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="ClauseHeaderTitle">
+                          <CanGrow>true</CanGrow>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!ClauseHeaderTitle.Value</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>ClauseHeaderTitle</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>None</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.6cm</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="ClauseHeaderDescription">
+                          <CanGrow>true</CanGrow>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!ClauseHeaderDescription.Value</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>ClauseHeaderDescription</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>None</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+              </TablixRows>
+            </TablixBody>
+            <TablixColumnHierarchy>
+              <TablixMembers>
+                <TablixMember />
+              </TablixMembers>
+            </TablixColumnHierarchy>
+            <TablixRowHierarchy>
+              <TablixMembers>
+                <TablixMember>
+                  <Group Name="Details1">
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!ClauseHeaderCode.Value</GroupExpression>
+                    </GroupExpressions>
+                  </Group>
+                  <TablixMembers>
+                    <TablixMember />
+                    <TablixMember />
+                    <TablixMember />
+                  </TablixMembers>
+                </TablixMember>
+              </TablixMembers>
+            </TablixRowHierarchy>
+            <DataSetName>DataSetClause</DataSetName>
+            <Top>0.34315cm</Top>
+            <Height>1.8cm</Height>
+            <Width>8.85851cm</Width>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Tablix>
+        </ReportItems>
+        <Top>2.34332cm</Top>
+        <Left>0.9234cm</Left>
+        <Height>2.14315cm</Height>
+        <Width>8.85851cm</Width>
+        <ZIndex>1</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Rectangle>
+      <Image Name="Image1">
+        <Source>Embedded</Source>
+        <Value>logomitsui</Value>
+        <Sizing>FitProportional</Sizing>
+        <Top>0.42009cm</Top>
+        <Left>3.81122cm</Left>
+        <Height>1.8174cm</Height>
+        <Width>3.46663cm</Width>
+        <ZIndex>2</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Image>
+    </ReportItems>
+    <Height>7.51961cm</Height>
+    <Style />
+  </Body>
+  <Width>9.85404cm</Width>
+  <Page>
+    <PageHeight>29.7cm</PageHeight>
+    <PageWidth>21cm</PageWidth>
+    <LeftMargin>0cm</LeftMargin>
+    <RightMargin>0cm</RightMargin>
+    <TopMargin>2cm</TopMargin>
+    <BottomMargin>2cm</BottomMargin>
+    <Columns>2</Columns>
+    <ColumnSpacing>0cm</ColumnSpacing>
+    <Style />
+  </Page>
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="ReportMLCIDataSet">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>41d992a2-4ecc-46dd-9eab-f6d339d9b827</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DataSetClause">
+      <Query>
+        <DataSourceName>ReportMLCIDataSet</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="Id">
+          <DataField>Id</DataField>
+          <rd:TypeName>System.Guid</rd:TypeName>
+        </Field>
+        <Field Name="ClauseCode">
+          <DataField>ClauseCode</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ClauseTitle">
+          <DataField>ClauseTitle</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ClauseContent">
+          <DataField>ClauseContent</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="IsActiveClause">
+          <DataField>IsActive</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="CreatedAt">
+          <DataField>CreatedAt</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="UpdatedAt">
+          <DataField>UpdatedAt</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="IdClauseSub">
+          <DataField>IdClauseSub</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="MasterClauseId">
+          <DataField>MasterClauseId</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ClauseSubCode">
+          <DataField>ClauseSubCode</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ClauseSubTitle">
+          <DataField>ClauseSubTitle</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ClauseSubContent">
+          <DataField>ClauseSubContent</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ClauseHeaderCode">
+          <DataField>ClauseHeaderCode</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ClauseHeaderTitle">
+          <DataField>ClauseHeaderTitle</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ClauseHeaderDescription">
+          <DataField>ClauseHeaderDescription</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="IsActiveHeader">
+          <DataField>IsActiveHeader</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SubDetailCode">
+          <DataField>SubDetailCode</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SubDetailTitle">
+          <DataField>SubDetailTitle</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SubDetailContent">
+          <DataField>SubDetailContent</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="IsActiveSubDetail">
+          <DataField>IsActiveSubDetail</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="MasterClauseDetailId">
+          <DataField>MasterClauseDetailId</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>ReportMLCIDataSet1</rd:DataSetName>
+        <rd:SchemaPath>D:\_Document\ReportMLCI\ReportMLCI\ReportMLCIDataSet1.xsd</rd:SchemaPath>
+        <rd:TableName>MasterClauses</rd:TableName>
+        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
+        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
+        <rd:TableAdapterName>MasterClausesTableAdapter</rd:TableAdapterName>
+      </rd:DataSetInfo>
+    </DataSet>
+  </DataSets>
+  <EmbeddedImages>
+    <EmbeddedImage Name="logomitsui">
+      <MIMEType>image/png</MIMEType>
+      <ImageData>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</ImageData>
+    </EmbeddedImage>
+  </EmbeddedImages>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Cm</rd:ReportUnitType>
+  <rd:ReportID>8025a3f0-3b98-408f-8efa-16ac64c76159</rd:ReportID>
+</Report>

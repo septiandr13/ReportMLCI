@@ -1,0 +1,184 @@
+﻿using System;
+using System.Text.RegularExpressions;
+using ReportMLCI.Services;
+
+namespace ReportMLCI.Utilities
+{
+    /// <summary>
+    /// Utility class untuk memproses HTML content dengan berbagai tag custom
+    /// </summary>
+    public class HtmlProcessingUtility
+    {
+        /// <summary>
+        /// Memproses value dari dataset SSRS yang mengandung tag &lt;j&gt;
+        /// </summary>
+        /// <param name="value">Value dari dataset</param>
+        /// <returns>Value yang sudah diproses</returns>
+        public static string ProcessDatasetValue(string value)
+        {
+            if (string.IsNullOrEmpty(value))
+                return value;
+
+            return value.ConvertJustifyTag();
+        }
+
+        /// <summary>
+        /// Memproses expression SSRS untuk report
+        /// </summary>
+        /// <param name="expression">Expression dari SSRS</param>
+        /// <returns>Expression yang sudah dimodifikasi</returns>
+        public static string ProcessSSRSExpression(string expression)
+        {
+            if (string.IsNullOrEmpty(expression))
+                return expression;
+
+            // Jika expression mengandung concatenation, proses setiap bagian
+            if (expression.Contains("&") || expression.Contains("+"))
+            {
+                // Pattern untuk menangkap literal string dalam expression
+                // Contoh: ="<j>text</j>" atau =Fields!Nama.Value & " <j>text</j>"
+                string pattern = @"""(.*?)""";
+
+                expression = Regex.Replace(expression, pattern, (match) =>
+                {
+                    var originalValue = match.Groups[1].Value;
+                    var processedValue = HtmlJustifyService.ConvertJustifyTag(originalValue);
+                    return $"\"{processedValue}\"";
+                });
+            }
+
+            return expression;
+        }
+
+        /// <summary>
+        /// Membuat justified HTML wrapper untuk content
+        /// </summary>
+        /// <param name="content">Content yang akan di-wrap</param>
+        /// <param name="className">Optional CSS class</param>
+        /// <returns>HTML dengan justified styling</returns>
+        public static string WrapInJustifyDiv(string content, string className = "")
+        {
+            if (string.IsNullOrEmpty(content))
+                return content;
+
+            string classAttr = !string.IsNullOrEmpty(className) ? $" class='{className}'" : "";
+            return $"<div style='text-align:justify;'{classAttr}>{content}</div>";
+        }
+
+        /// <summary>
+        /// Membuat justified HTML wrapper dengan additional styles
+        /// </summary>
+        /// <param name="content">Content yang akan di-wrap</param>
+        /// <param name="additionalStyles">Style tambahan (contoh: margin:10px; line-height:1.5;)</param>
+        /// <returns>HTML dengan justified styling dan additional styles</returns>
+        public static string WrapInJustifyDiv(string content, string additionalStyles, string className = "")
+        {
+            if (string.IsNullOrEmpty(content))
+                return content;
+
+            string baseStyle = "text-align:justify;";
+            if (!string.IsNullOrEmpty(additionalStyles))
+            {
+                baseStyle += additionalStyles;
+            }
+
+            string classAttr = !string.IsNullOrEmpty(className) ? $" class='{className}'" : "";
+            return $"<div style='{baseStyle}'{classAttr}>{content}</div>";
+        }
+
+        /// <summary>
+        /// Memproses nested tags dan multiple justify tags
+        /// </summary>
+        /// <param name="htmlContent">HTML content dengan multiple tags</param>
+        /// <returns>HTML yang sudah diproses</returns>
+        public static string ProcessMultipleJustifyTags(string htmlContent)
+        {
+            if (string.IsNullOrEmpty(htmlContent))
+                return htmlContent;
+
+            int count = 0;
+            string result = htmlContent;
+
+            // Terus proses sampai tidak ada lagi tag <j>
+            while (HtmlJustifyService.ContainsJustifyTag(result) && count < 10)
+            {
+                result = HtmlJustifyService.ConvertJustifyTag(result);
+                count++;
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Membuat CSS style string untuk justify text
+        /// </summary>
+        /// <param name="lineHeight">Line height (optional, default: 1.5)</param>
+        /// <param name="letterSpacing">Letter spacing (optional)</param>
+        /// <param name="wordSpacing">Word spacing (optional)</param>
+        /// <returns>CSS style string</returns>
+        public static string GenerateJustifyCSS(string lineHeight = "1.5", string letterSpacing = "", string wordSpacing = "")
+        {
+            string css = $"text-align:justify;line-height:{lineHeight};";
+
+            if (!string.IsNullOrEmpty(letterSpacing))
+                css += $"letter-spacing:{letterSpacing};";
+
+            if (!string.IsNullOrEmpty(wordSpacing))
+                css += $"word-spacing:{wordSpacing};";
+
+            return css;
+        }
+
+        /// <summary>
+        /// Memvalidasi HTML structure untuk tag &lt;j&gt;
+        /// </summary>
+        /// <param name="htmlContent">HTML content yang akan divalidasi</param>
+        /// <returns>True jika HTML valid, False jika ada tag yang tidak tertutup</returns>
+        public static bool ValidateJustifyTags(string htmlContent)
+        {
+            if (string.IsNullOrEmpty(htmlContent))
+                return true;
+
+            // Hitung opening dan closing tags
+            int openCount = Regex.Matches(htmlContent, @"<j\s*[^>]*>", RegexOptions.IgnoreCase).Count;
+            int closeCount = Regex.Matches(htmlContent, @"</j\s*>", RegexOptions.IgnoreCase).Count;
+
+            return openCount == closeCount;
+        }
+
+        /// <summary>
+        /// Mendapatkan semua tag &lt;j&gt; dan contentnya dari HTML
+        /// </summary>
+        /// <param name="htmlContent">HTML content</param>
+        /// <returns>Array berisi semua content dalam tag &lt;j&gt;</returns>
+        public static string[] ExtractJustifyTagContent(string htmlContent)
+        {
+            if (string.IsNullOrEmpty(htmlContent))
+                return Array.Empty<string>();
+
+            var matches = Regex.Matches(htmlContent, @"<j\s*[^>]*>(.*?)</j>", 
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+            string[] results = new string[matches.Count];
+            for (int i = 0; i < matches.Count; i++)
+            {
+                results[i] = matches[i].Groups[1].Value;
+            }
+
+            return results;
+        }
+
+        /// <summary>
+        /// Menghitung jumlah tag &lt;j&gt; dalam content
+        /// </summary>
+        /// <param name="htmlContent">HTML content</param>
+        /// <returns>Jumlah tag &lt;j&gt;</returns>
+        public static int CountJustifyTags(string htmlContent)
+        {
+            if (string.IsNullOrEmpty(htmlContent))
+                return 0;
+
+            return Regex.Matches(htmlContent, @"<j\s*[^>]*>", RegexOptions.IgnoreCase).Count;
+        }
+    }
+}

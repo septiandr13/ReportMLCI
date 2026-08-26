@@ -1,0 +1,55 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
+using ReportMLCI.Models;
+
+namespace ReportMLCI.Data
+{
+    public class ApplicationDbContext : DbContext
+    {
+        public DbSet<MasterClause> MasterClauses { get; set; }
+        public DbSet<MasterClausesDetails> MasterClausesDetails { get; set; }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            if (!optionsBuilder.IsConfigured)
+            {
+                string connectionString = @"Data Source=(localdb)\mssqllocaldb;Initial Catalog=ReportMLCI;Integrated Security=true;";
+                optionsBuilder.UseSqlServer(connectionString);
+            }
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            // Configure MasterClause table
+            modelBuilder.Entity<MasterClause>(entity =>
+            {
+                entity.HasKey(e => e.Id);
+                entity.Property(e => e.Id).HasDefaultValueSql("NEWID()");
+                entity.Property(e => e.ClauseCode).HasMaxLength(50);
+                entity.Property(e => e.ClauseTitle).HasMaxLength(200);
+                entity.Property(e => e.ClauseContent).HasColumnType("nvarchar(max)");
+                entity.Property(e => e.IsActive).HasDefaultValue(true);
+            });
+
+            // Configure MasterClausesDetails table
+            modelBuilder.Entity<MasterClausesDetails>(entity =>
+            { 
+                entity.HasKey(e => e.Id);
+                entity.Property(e => e.Id).HasDefaultValueSql("NEWID()");
+                entity.Property(e => e.MasterClauseId).IsRequired();
+                entity.Property(e => e.ClauseSubCode).HasMaxLength(50);
+                entity.Property(e => e.ClauseSubTitle).HasMaxLength(200);
+                entity.Property(e => e.ClauseSubContent).HasColumnType("nvarchar(max)");
+                entity.Property(e => e.IsActive).HasDefaultValue(true);
+
+                // Configure foreign key relationship
+                entity.HasOne<MasterClause>()
+                      .WithMany()
+                      .HasForeignKey(d => d.MasterClauseId)
+                      .OnDelete(DeleteBehavior.Cascade);
+            });
+        }
+    }
+}

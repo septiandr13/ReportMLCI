@@ -1,0 +1,23 @@
+﻿
+using System.Data.SqlClient;
+
+namespace ReportMLCI.Helper
+{
+    interface HandleNull
+    {
+        private string nlString(SqlDataReader reader, string fieldName)
+        {
+            return reader[fieldName] != DBNull.Value
+                ? reader[fieldName].ToString()
+                : "";
+        }
+
+        private bool nlBool(SqlDataReader reader, string fieldName)
+        {
+            return reader[fieldName] != DBNull.Value
+                ? Convert.ToBoolean(reader[fieldName])
+                : false;
+        }
+    }
+}
+

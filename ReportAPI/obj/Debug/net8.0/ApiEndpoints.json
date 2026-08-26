@@ -1,0 +1,485 @@
+[
+  {
+    "ContainingType": "ReportAPI.Controllers.MasterClauseController",
+    "Method": "GetMasterClauses",
+    "RelativePath": "api/MasterClause",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[ReportMLCI.Shared.Models.MasterClause, ReportMLCI.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ReportAPI.Controllers.MasterClauseController",
+    "Method": "PostMasterClause",
+    "RelativePath": "api/MasterClause",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "masterClause",
+        "Type": "ReportMLCI.Shared.Models.MasterClause",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ReportMLCI.Shared.Models.MasterClause",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ReportAPI.Controllers.MasterClauseController",
+    "Method": "GetMasterClause",
+    "RelativePath": "api/MasterClause/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ReportMLCI.Shared.Models.MasterClause",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ReportAPI.Controllers.MasterClauseController",
+    "Method": "PutMasterClause",
+    "RelativePath": "api/MasterClause/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "masterClause",
+        "Type": "ReportMLCI.Shared.Models.MasterClause",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ReportAPI.Controllers.MasterClauseController",
+    "Method": "DeleteMasterClause",
+    "RelativePath": "api/MasterClause/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ReportAPI.Controllers.MasterClausesDetailsController",
+    "Method": "GetMasterClausesDetails",
+    "RelativePath": "api/MasterClausesDetails",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[ReportMLCI.Shared.Models.MasterClausesDetails, ReportMLCI.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ReportAPI.Controllers.MasterClausesDetailsController",
+    "Method": "PostMasterClausesDetails",
+    "RelativePath": "api/MasterClausesDetails",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "masterClausesDetails",
+        "Type": "ReportMLCI.Shared.Models.MasterClausesDetails",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ReportMLCI.Shared.Models.MasterClausesDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ReportAPI.Controllers.MasterClausesDetailsController",
+    "Method": "GetMasterClausesDetails",
+    "RelativePath": "api/MasterClausesDetails/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ReportMLCI.Shared.Models.MasterClausesDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ReportAPI.Controllers.MasterClausesDetailsController",
+    "Method": "PutMasterClausesDetails",
+    "RelativePath": "api/MasterClausesDetails/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "masterClausesDetails",
+        "Type": "ReportMLCI.Shared.Models.MasterClausesDetails",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ReportAPI.Controllers.MasterClausesDetailsController",
+    "Method": "DeleteMasterClausesDetails",
+    "RelativePath": "api/MasterClausesDetails/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ReportAPI.Controllers.MasterClausesSubDetailsController",
+    "Method": "GetMasterClausesSubDetails",
+    "RelativePath": "api/MasterClausesSubDetails",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[ReportMLCI.Shared.Models.MasterClausesSubDetails, ReportMLCI.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ReportAPI.Controllers.MasterClausesSubDetailsController",
+    "Method": "PostMasterClausesSubDetails",
+    "RelativePath": "api/MasterClausesSubDetails",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "masterClausesSubDetails",
+        "Type": "ReportMLCI.Shared.Models.MasterClausesSubDetails",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ReportMLCI.Shared.Models.MasterClausesSubDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ReportAPI.Controllers.MasterClausesSubDetailsController",
+    "Method": "GetMasterClausesSubDetails",
+    "RelativePath": "api/MasterClausesSubDetails/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ReportMLCI.Shared.Models.MasterClausesSubDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ReportAPI.Controllers.MasterClausesSubDetailsController",
+    "Method": "PutMasterClausesSubDetails",
+    "RelativePath": "api/MasterClausesSubDetails/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "masterClausesSubDetails",
+        "Type": "ReportMLCI.Shared.Models.MasterClausesSubDetails",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ReportAPI.Controllers.MasterClausesSubDetailsController",
+    "Method": "DeleteMasterClausesSubDetails",
+    "RelativePath": "api/MasterClausesSubDetails/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ReportAPI.Controllers.MasterHeaderClauseController",
+    "Method": "GetMasterHeaderClauses",
+    "RelativePath": "api/MasterHeaderClause",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[MasterHeaderClauseDto, ReportAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ReportAPI.Controllers.MasterHeaderClauseController",
+    "Method": "PostMasterHeaderClause",
+    "RelativePath": "api/MasterHeaderClause",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "masterHeaderClause",
+        "Type": "ReportMLCI.Shared.Models.MasterHeaderClause",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ReportMLCI.Shared.Models.MasterHeaderClause",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ReportAPI.Controllers.MasterHeaderClauseController",
+    "Method": "GetMasterHeaderClause",
+    "RelativePath": "api/MasterHeaderClause/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ReportMLCI.Shared.Models.MasterHeaderClause",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ReportAPI.Controllers.MasterHeaderClauseController",
+    "Method": "PutMasterHeaderClause",
+    "RelativePath": "api/MasterHeaderClause/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "masterHeaderClause",
+        "Type": "ReportMLCI.Shared.Models.MasterHeaderClause",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ReportAPI.Controllers.MasterHeaderClauseController",
+    "Method": "DeleteMasterHeaderClause",
+    "RelativePath": "api/MasterHeaderClause/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ReportAPI.Controllers.ReportController",
+    "Method": "GetClauseMLCIReport",
+    "RelativePath": "api/Report/clause-mlci",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ReportAPI.Controllers.ReportController",
+    "Method": "GetClauseMLCIReportById",
+    "RelativePath": "api/Report/clause-mlci/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ReportAPI.Controllers.WeatherForecastController",
+    "Method": "Get",
+    "RelativePath": "WeatherForecast",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[ReportAPI.WeatherForecast, ReportAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "GetWeatherForecast"
+  }
+]

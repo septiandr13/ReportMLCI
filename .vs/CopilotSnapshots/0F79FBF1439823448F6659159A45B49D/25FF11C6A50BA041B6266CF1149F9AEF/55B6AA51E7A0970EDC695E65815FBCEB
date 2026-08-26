@@ -1,0 +1,141 @@
+﻿using Microsoft.Reporting.WinForms;
+using ReportMLCI.Controllers;
+using ReportMLCI.Services;
+
+namespace ReportMLCI
+{
+    public partial class Form1 : Form
+    {
+        private ReportProcessorController _reportProcessor;
+
+        public Form1()
+        {
+            InitializeComponent();
+            this.Load += Form1_Load;
+            comboBox1.SelectedIndexChanged += ComboBox1_SelectedIndexChanged;
+            _reportProcessor = new ReportProcessorController();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            // Isi pilihan report
+            comboBox1.Items.Add("Report 1");
+            comboBox1.Items.Add("Report Lampiran 2");
+        }
+
+        private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadReport(comboBox1.SelectedItem.ToString());
+        }
+
+        private void LoadReport(string reportName)
+        {
+            string fileName = "";
+
+            switch (reportName)
+            {
+                case "Report 1":
+                    fileName = "Report1.rdlc";
+                    break;
+                case "Report Lampiran 2":
+                    fileName = "Report_Lampiran2.rdlc";
+                    break;
+            }
+
+            string reportPath = Path.Combine(Application.StartupPath, "Reports", fileName);
+
+            if (!File.Exists(reportPath))
+            {
+                MessageBox.Show("File tidak ditemukan:\n" + reportPath);
+                return;
+            }
+
+            reportViewer1.LocalReport.ReportPath = reportPath;
+
+            // Determine which data source to use based on report name
+            if (reportName == "Report Lampiran 2")
+            {
+                // Dummy data for Report_Lampiran2
+                var dataLampiran2 = new List<DataLampiran2>
+                {
+                    new DataLampiran2
+                    {
+                        Np = "1512345678",
+                        NamaKreditur = "PT MITSUI LEASING CAPITAL INDONESIA",
+                        AlamatKreditur = "JL. GATOT SUBROTO KAV. 42, JAKARTA SELATAN",
+                        NorekKreditur = "09928737882",
+                        NameDebitur = "Septian Dwi Rahmanza",
+
+                        InterestFlatRate = "5%",
+                        InterestEffectiveRate = "6%",
+                        InstallmentPaymentMethod = "Cicilan",
+                        Currency = "IDR",
+                        InstallmentPaymentTiming = "Bulanan",
+                        DueDateDescription = "Setiap tanggal 10 pada bulan berjalan",
+
+                        InsuranceCompanyName = "PT. ASURANSI Raksa",
+                        PolicyDuration = "12 Bulan",
+                        PremiumPaymentMethod = "Cicilan Bulanan",
+                        CoverageDetail = "Asuransi Kendaraan Bermotor dengan full coverage",
+
+                        PaymentDate = new DateTime(2023, 1, 4),
+                    }
+                };
+
+                // Process data untuk convert <j> tags sebelum binding ke report
+                var processedData = _reportProcessor.ProcessReportDataCollection(dataLampiran2);
+
+                reportViewer1.LocalReport.DataSources.Clear();
+                reportViewer1.LocalReport.DataSources.Add(
+                    new ReportDataSource("DataSet1", processedData)
+                );
+            }
+            else
+            {
+                // Dummy data for Report 1
+                var data = new List<Produk>
+                {
+                    new Produk { ID = 1, Nama = "Produk A", Jumlah = 10 },
+                    new Produk { ID = 2, Nama = "Produk B", Jumlah = 20 }
+                };
+
+                reportViewer1.LocalReport.DataSources.Clear();
+                reportViewer1.LocalReport.DataSources.Add(
+                    new ReportDataSource("DataSet1", data)
+                );
+            }
+
+            //reportViewer1.LocalReport.EnableExternalImages = true;
+            reportViewer1.RefreshReport();
+        }
+
+        public class Produk
+        {
+            public int ID { get; set; }
+            public string Nama { get; set; }
+            public int Jumlah { get; set; }
+        }
+
+        public class DataLampiran2
+        {
+            public string Np { get; set; }
+            public string NamaKreditur { get; set; }
+            public string AlamatKreditur { get; set; }
+            public string NorekKreditur { get; set; }
+            public string NameDebitur { get; set; }
+
+            public string InterestFlatRate { get; set; }
+            public string InterestEffectiveRate { get; set; }
+            public string InstallmentPaymentMethod { get; set; }
+            public string Currency { get; set; }
+            public string InstallmentPaymentTiming { get; set; }
+            public string DueDateDescription { get; set; }
+
+            public string InsuranceCompanyName { get; set; }
+            public string PolicyDuration { get; set; }
+            public string PremiumPaymentMethod { get; set; }
+            public string CoverageDetail { get; set; }
+            public DateTime PaymentDate { get; set; }
+        }
+    }
+}
