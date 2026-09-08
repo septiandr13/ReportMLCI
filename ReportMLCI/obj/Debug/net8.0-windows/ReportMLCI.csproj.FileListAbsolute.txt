@@ -190,3 +190,7 @@ D:\_Document\ReportMLCI\ReportMLCI\obj\Debug\net8.0-windows\refint\ReportMLCI.dl
 D:\_Document\ReportMLCI\ReportMLCI\obj\Debug\net8.0-windows\ReportMLCI.pdb
 D:\_Document\ReportMLCI\ReportMLCI\obj\Debug\net8.0-windows\ReportMLCI.genruntimeconfig.cache
 D:\_Document\ReportMLCI\ReportMLCI\obj\Debug\net8.0-windows\ref\ReportMLCI.dll
+D:\_Document\ReportMLCI\ReportMLCI\bin\Debug\net8.0-windows\Reports\ReportListCAMByApprovalDate.rdlc
+D:\_Document\ReportMLCI\ReportMLCI\bin\Debug\net8.0-windows\Reports\ReportListRejectedCAM.rdlc
+D:\_Document\ReportMLCI\ReportMLCI\bin\Debug\net8.0-windows\Reports\ReportHistoryPayment.rdlc
+D:\_Document\ReportMLCI\ReportMLCI\bin\Debug\net8.0-windows\Reports\ReportEarlyTermination.rdlc

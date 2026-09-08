@@ -21,6 +21,11 @@ namespace ReportMLCI
             comboBox1.Items.Add("Report Lampiran 1");
             comboBox1.Items.Add("Report Lampiran 2");
             comboBox1.Items.Add("Report Clause MLCI");
+            comboBox1.Items.Add("Report List CAM Approve Date");
+            comboBox1.Items.Add("Report List Rejected CAM");
+            comboBox1.Items.Add("Report History Payment");
+            comboBox1.Items.Add("Report Early Termination");
+
         }
 
         private void ComboBox1_SelectedItemChanged(object sender, EventArgs e)
@@ -45,6 +50,18 @@ namespace ReportMLCI
                     break;
                 case "Report Clause MLCI":
                     fileName = "Report_ClauseMLCI.rdlc";
+                    break;
+                case "Report List CAM Approve Date":
+                    fileName = "ReportListCAMByApprovalDate.rdlc";
+                    break;
+                case "Report List Rejected CAM":
+                    fileName = "ReportListRejectedCAM.rdlc";
+                    break;
+                case "Report History Payment":
+                    fileName = "ReportHistoryPayment.rdlc";
+                    break;
+                case "Report Early Termination":
+                    fileName = "ReportEarlyTermination.rdlc";
                     break;
             }
 
