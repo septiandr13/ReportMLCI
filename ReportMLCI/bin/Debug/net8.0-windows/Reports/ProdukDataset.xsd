@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ProdukDataset" targetNamespace="http://tempuri.org/ProdukDataset.xsd" xmlns:mstns="http://tempuri.org/ProdukDataset.xsd" xmlns="http://tempuri.org/ProdukDataset.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ProdukDataset" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="ProdukDataset" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="ProdukDataset">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ProdukTable" msprop:Generator_RowEvHandlerName="ProdukTableRowChangeEventHandler" msprop:Generator_RowDeletedName="ProdukTableRowDeleted" msprop:Generator_RowDeletingName="ProdukTableRowDeleting" msprop:Generator_RowEvArgName="ProdukTableRowChangeEvent" msprop:Generator_TablePropName="ProdukTable" msprop:Generator_RowChangedName="ProdukTableRowChanged" msprop:Generator_UserTableName="ProdukTable" msprop:Generator_RowChangingName="ProdukTableRowChanging" msprop:Generator_RowClassName="ProdukTableRow" msprop:Generator_TableClassName="ProdukTableDataTable" msprop:Generator_TableVarName="tableProdukTable">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_UserColumnName="ID" msprop:Generator_ColumnVarNameInTable="columnID" type="xs:int" minOccurs="0" />
+              <xs:element name="Nama" msprop:Generator_ColumnPropNameInTable="NamaColumn" msprop:Generator_ColumnPropNameInRow="Nama" msprop:Generator_UserColumnName="Nama" msprop:Generator_ColumnVarNameInTable="columnNama" type="xs:string" minOccurs="0" />
+              <xs:element name="Jumlah" msprop:Generator_ColumnPropNameInTable="JumlahColumn" msprop:Generator_ColumnPropNameInRow="Jumlah" msprop:Generator_UserColumnName="Jumlah" msprop:Generator_ColumnVarNameInTable="columnJumlah" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Pembayaran" msprop:Generator_RowEvHandlerName="PembayaranRowChangeEventHandler" msprop:Generator_RowDeletedName="PembayaranRowDeleted" msprop:Generator_RowDeletingName="PembayaranRowDeleting" msprop:Generator_RowEvArgName="PembayaranRowChangeEvent" msprop:Generator_TablePropName="Pembayaran" msprop:Generator_RowChangedName="PembayaranRowChanged" msprop:Generator_RowChangingName="PembayaranRowChanging" msprop:Generator_TableClassName="PembayaranDataTable" msprop:Generator_RowClassName="PembayaranRow" msprop:Generator_TableVarName="tablePembayaran" msprop:Generator_UserTableName="Pembayaran">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Name" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_UserColumnName="Name" type="xs:string" minOccurs="0" />
+              <xs:element name="Date" msprop:Generator_ColumnPropNameInRow="Date" msprop:Generator_ColumnPropNameInTable="DateColumn" msprop:Generator_ColumnVarNameInTable="columnDate" msprop:Generator_UserColumnName="Date" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="PembayaranKey1">
+      <xs:selector xpath=".//mstns:Pembayaran" />
+      <xs:field xpath="mstns:Name" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

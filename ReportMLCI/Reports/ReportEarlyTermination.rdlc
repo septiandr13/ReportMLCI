@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -1172,10 +1172,10 @@
             </Style>
           </Textbox>
         </ReportItems>
-        <Height>21cm</Height>
+        <Height>12cm</Height>
         <Style />
       </Body>
-      <Width>29.7cm</Width>
+      <Width>28.5cm</Width>
       <Page>
         <PageHeader>
           <Height>2.41087cm</Height>
@@ -1259,7 +1259,7 @@
           </Style>
         </PageHeader>
         <PageFooter>
-          <Height>2.54cm</Height>
+          <Height>0.5cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <Style>
             <Border>
@@ -1269,21 +1269,15 @@
         </PageFooter>
         <PageHeight>21cm</PageHeight>
         <PageWidth>29.7cm</PageWidth>
-        <LeftMargin>0cm</LeftMargin>
-        <RightMargin>0cm</RightMargin>
-        <TopMargin>0cm</TopMargin>
-        <BottomMargin>0cm</BottomMargin>
+        <LeftMargin>0.6cm</LeftMargin>
+        <RightMargin>0.6cm</RightMargin>
+        <TopMargin>0.5cm</TopMargin>
+        <BottomMargin>0.5cm</BottomMargin>
         <ColumnSpacing>0.13cm</ColumnSpacing>
         <Style />
       </Page>
     </ReportSection>
   </ReportSections>
-  <ReportParametersLayout>
-    <GridLayoutDefinition>
-      <NumberOfColumns>4</NumberOfColumns>
-      <NumberOfRows>2</NumberOfRows>
-    </GridLayoutDefinition>
-  </ReportParametersLayout>
   <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
   <rd:ReportID>d79fa5ae-c99a-4fff-a118-a27330e9729b</rd:ReportID>
