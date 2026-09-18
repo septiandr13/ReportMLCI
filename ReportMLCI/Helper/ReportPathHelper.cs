@@ -28,6 +28,8 @@ namespace ReportMLCI.Helper
                 "Report Blacklist" => "ReportBlacklist.rdlc",
                 "Report Detail SID Checking" => "ReportDetailSIDChecking.rdlc",
                 "CF_FD_PO_TC" => "Retail/CF_FD_PO_TC.rdlc",
+                "01. Addendum Perjanjian Pembiayaan" => "DocContract/01. Addendum Perjanjian Pembiayaan.rdlc",
+                "03. Lampiran II - Daftar Perincian Pembiayaan - Badan Hukum" => "DocContract/03. Lampiran II - Daftar Perincian Pembiayaan - Badan Hukum.rdlc",
                 _ => string.Empty
             };
         }

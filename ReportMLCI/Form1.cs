@@ -44,6 +44,8 @@ namespace ReportMLCI
             comboBox1.Items.Add("Report Blacklist");
             comboBox1.Items.Add("Report Detail SID Checking");
             comboBox1.Items.Add("CF_FD_PO_TC");
+            comboBox1.Items.Add("01. Addendum Perjanjian Pembiayaan");
+            comboBox1.Items.Add("03. Lampiran II - Daftar Perincian Pembiayaan - Badan Hukum");
         }
         #endregion
 

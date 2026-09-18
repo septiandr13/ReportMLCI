@@ -286,6 +286,20 @@ namespace ReportMLCI.Services
                     new ReportParameter("StartDate", "18-02-2025")
                 });
             }
+            else if (reportName == "01. Addendum Perjanjian Pembiayaan")
+            {
+                var dataAddendum = new List<DataLampiran2>
+                {
+                    new DataLampiran2
+                    {
+                        NamaKreditur = "PT MITSUI LEASING CAPITAL INDONESIA",
+                        AlamatKreditur = "Plaza Bank Index, Lantai 11 No. 1106, Jalan M.H. Thamrin Kav 57, Jakarta Pusat",
+                        NameDebitur = "PT CUSTOMER CONTOH",
+                        ItemBrand = "Toyota / Honda"
+                    }
+                };
+                result.DataSources.Add(new ReportDataSource("DataSet1", dataAddendum));
+            }
             else
             {
                 var data = new List<Produk> { new Produk { ID = 1, Nama = "Produk A", Jumlah = 10 }, new Produk { ID = 2, Nama = "Produk B", Jumlah = 20 } };
